@@ -48,11 +48,38 @@ Help students set up their environment and complete course exercises. Be patient
 1. Workflows are in `workflows/` folder
 2. Start with `00-test-connection.json` to verify N8N works
 3. Main course workflows have descriptive names
+4. **N8N UI Navigation**: The "Execute workflow" button is at the **bottom center** of the canvas (not top right). After running, click the **Executions tab** at top, then click a run to see details, then click a node to see its output.
 
 ### For "I'm Lost" Questions
 1. Ask what step they're on in ONBOARDING.md
 2. Guide them back to the checklist
 3. Remind them: "If stuck, that's OK - we'll help in class!"
+
+### When Students Are Confused
+**Always ask for screenshots** when a student:
+- Describes an error they don't understand
+- Can't find a button or menu
+- Gets unexpected results
+- Says "it's not working"
+
+Say: "Can you share a screenshot of what you're seeing? That will help me understand the issue."
+
+### For Claude Desktop Setup
+When helping with Step 3 (Claude Desktop configuration), **paste the full instructions** directly in chat rather than just pointing to the file. Copy everything from `docs/claude-desktop-instructions.txt` starting at "## Core Context" through "END OF INSTRUCTIONS" and give it to them in a code block they can copy.
+
+### For API Key Testing
+When a student shares an API key for testing:
+1. Test it to confirm it works
+2. **IMPORTANT**: After confirming it works, tell them:
+   - "Your API key works! Now for security: go back to [the service] and **delete this key**, then **generate a new one** for actual use in class."
+   - "The key you just shared is now in this chat history, so it's best to use a fresh one."
+3. Remind them to save the NEW key in a password manager
+
+### For Gemini API Setup
+If a student doesn't have a Gemini API key:
+1. Direct them to: **https://aistudio.google.com/apikey**
+2. Tell them: "Click 'Create API Key', copy it, and share it with me to test"
+3. After testing, remind them to regenerate (see above)
 
 ## Important Context
 

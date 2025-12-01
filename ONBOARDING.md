@@ -171,11 +171,17 @@ Write the results to docs/faq-draft.md
 3. Select `workflows/00-test-connection.json` from your cloned repo
 
 ### 6.3 Run the Workflow
-1. Click **Test workflow** button (or click the play icon)
+1. Click the red **Execute workflow** button at the **bottom center** of the canvas
 2. The workflow runs immediately (it's a manual trigger)
+3. You'll see green checkmarks appear on each node when complete
 
-### 6.4 Verify Success
-**Expected output:**
+### 6.4 View the Results
+1. Click the **Executions** tab at the top center of the screen
+2. Click on the execution row that just appeared (shows timestamp)
+3. Click on the **"Create Success Message"** node to see its output
+
+### 6.5 Verify Success
+**Expected output** (shown in the OUTPUT panel on the right):
 ```json
 {
   "message": "Hello from N8N!",
@@ -184,7 +190,7 @@ Write the results to docs/faq-draft.md
 }
 ```
 
-You should see these three fields in the output panel of the "Create Success Message" node.
+You should see these three fields in a table or JSON view.
 
 **Troubleshooting:**
 - Import fails? → Check N8N plan (Starter tier required)
@@ -204,12 +210,14 @@ You should see these three fields in the output panel of the "Create Success Mes
 Open your terminal and run:
 
 ```bash
-curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=YOUR_API_KEY" \
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=YOUR_API_KEY" \
   -H 'Content-Type: application/json' \
   -d '{"contents":[{"parts":[{"text":"Say hello in exactly 3 words"}]}]}'
 ```
 
 Replace `YOUR_API_KEY` with your actual key.
+
+> **Note:** If the model name changes, try `gemini-2.0-flash-exp` or check [Google AI Studio](https://aistudio.google.com) for the current model name.
 
 **Expected output:**
 ```json
