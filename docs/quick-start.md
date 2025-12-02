@@ -23,7 +23,9 @@ code mindvalley-ai-mastery-students
 
 ## Step 2: Paste the First Day Prompt
 
-Open Claude Code (orange icon in VS Code sidebar) and paste this entire prompt:
+Open Claude Code (orange icon in VS Code sidebar) and paste this entire prompt.
+
+> **Don't see the orange icon?** Install Claude Code first: VS Code → Extensions (Cmd/Ctrl+Shift+X) → Search "Claude Code" → Install → Sign in with your Claude account
 
 ```
 ## AI Mastery First Day Setup
