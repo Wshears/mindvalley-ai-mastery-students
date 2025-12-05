@@ -21,9 +21,16 @@ This folder contains all the N8N workflow JSONs you'll use throughout the course
 | File | Purpose | Session |
 |------|---------|---------|
 | `gemini-ingestion-engine-v2-2025-11-27.json` | Ingest documents into Gemini File Search | 1 |
-| `echo-brand-voice-v1-2025-11-27.json` | Analyze and match brand voice | 1-2 |
+| `echo-trigger-v2-2025-12-05.json` | Echo Brand Voice - Form trigger (instant response) | 1-2 |
+| `echo-processor-v2-2025-12-05.json` | Echo Brand Voice - Background processor (email delivery) | 1-2 |
 | `email-filter-v1-2025-11-27.json` | Classify incoming emails | 2 |
 | `librarian-tool-v1-2025-11-27.json` | Search knowledge base | 2 |
+
+> **Note on Echo Workflows:** Echo uses a two-workflow "fire-and-forget" architecture:
+> - **Echo Trigger**: Handles form submission, responds instantly, fires processor
+> - **Echo Processor**: Runs 14-step analysis in background, emails results (5-10 min)
+>
+> After importing, update the Trigger's "Execute Workflow" node to point to your Processor workflow ID.
 
 ### KB Management (Gemini File Search)
 | File | Purpose | Session |

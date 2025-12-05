@@ -90,38 +90,53 @@ You need **both**:
 
 ## Running the Echo Workflow
 
-### Step 1: Open N8N
-Navigate to your N8N instance and find the "Echo Brand Voice Analysis" workflow.
+Echo uses a two-workflow architecture for reliability. You submit a form, get instant confirmation, and receive results via email in 5-10 minutes.
+
+### Step 1: Open the Echo Form
+Navigate to the Echo Brand Voice form URL (provided by your instructor or in your N8N workflows).
+
+**Form URL example:** `https://your-n8n-instance.app.n8n.cloud/form/echo-form`
 
 ### Step 2: Fill the Form
 
 | Field | Description |
 |-------|-------------|
+| **Your Email** | Where results will be delivered (double-check for typos!) |
 | **Voice Type** | Select: personal, company, or combined |
 | **Person Name** | Your name (required for personal/combined) |
 | **Company Name** | Company name (required for company/combined) |
 | **Writing Samples** | Paste all your personal writing samples |
 | **Company Materials** | Paste brand guidelines (for company/combined) |
-| **Skip QC Validation** | Keep "No" for quality check |
 
 ### Step 3: Submit and Wait
-The workflow runs 3-4 phases:
-1. Deep linguistic analysis (~30 sec)
-2. Voice attribute extraction (~15 sec)
-3. XML generation (~15 sec)
-4. QC validation (~15 sec) - optional
+After clicking Submit:
+1. You'll see an instant confirmation page ("Analysis Started!")
+2. Background processing runs automatically (3-4 minutes)
+3. Results are emailed to you (typically 5-10 minutes total)
 
-### Step 4: Review Output
-You'll receive:
-- **XML Brand Voice Snippet**: For use in YGM and other agents
-- **Analysis Summary**: Key findings about your voice
-- **QC Result**: Pass/Fail with feedback
+**Do NOT wait in N8N or your browser** - close the tab if you want. The results come via email.
+
+### Step 4: Check Your Email
+You'll receive an email with two attachments:
+- **{businessName}-brand-voice.xml** - Paste this into your agent's system prompt
+- **{businessName}-full-analysis.md** - Upload this to your Stacks (knowledge base)
+
+**Check your spam/junk folder** if you don't see the email after 10 minutes.
+
+### If You Don't Receive Email
+
+1. **Check spam/junk folder** - automated emails often get filtered
+2. **Verify email address** - if you made a typo, submit the form again
+3. **Wait the full 10 minutes** - processing can take longer under load
+4. **Contact your instructor** - if still missing after 15 minutes
 
 ---
 
 ## Understanding Your Output
 
-### The XML Brand Voice Snippet
+Your Echo results arrive via email with two attachments. Here's what each contains:
+
+### The XML Brand Voice Snippet (brand-voice.xml)
 
 ```xml
 <BrandVoice type="personal" subject="Your Name">

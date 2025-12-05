@@ -16,6 +16,8 @@ Fast fixes for common issues. For each problem, try the Quick Fix first, then De
 | Slack messages not appearing | Verify bot is invited to channel |
 | Git clone fails | Check internet, verify URL spelling |
 | Permission denied on setup.sh | Run `chmod +x setup.sh` first |
+| **Echo email not received** | **Check spam folder, wait 10 min** |
+| **Echo form deactivated** | **Activate both Echo workflows in N8N** |
 
 ---
 
@@ -175,6 +177,54 @@ ls -la .claude/
 2. OAuth & Permissions → Bot User OAuth Token
 3. Copy the token (starts with `xoxb-`)
 4. Update in N8N credentials
+
+---
+
+## Echo Workflow Issues
+
+### Email Not Received After Echo Submission
+
+**Symptoms:** Submitted Echo form, got confirmation page, but no email after 10+ minutes.
+
+**Quick Fix:**
+1. Check spam/junk folder (often caught by filters)
+2. Verify you entered the correct email address
+3. Wait the full 10 minutes (can take longer under high load)
+
+**If still missing after 15 minutes:**
+- Ask instructor to check N8N execution history
+- Use backup method: paste megadoc in Claude Desktop and ask for brand voice analysis
+
+### Echo Form Shows "Deactivated" or "Does Not Exist"
+
+**Symptoms:** Opening form URL shows error page.
+
+**Quick Fix:**
+1. Verify you're using the correct URL from your instructor
+2. If using YOUR N8N instance: ensure both Echo workflows are activated
+   - Go to N8N → Find "Echo Trigger" workflow → Toggle "Active" ON
+   - Find "Echo Processor" workflow → Toggle "Active" ON
+
+**Note:** The form URL is tied to YOUR N8N instance. Each student has their own form URL once they import the workflows.
+
+### Echo Email Missing Attachments
+
+**Symptoms:** Received email but no files attached.
+
+**Quick Fix:**
+- Check if email client is hiding attachments (click "Show attachments" or similar)
+- Download from webmail if using mobile app
+- Files are: `{businessName}-brand-voice.xml` and `{businessName}-full-analysis.md`
+
+### Echo Form Submission Error
+
+**Symptoms:** Form shows error when clicking Submit.
+
+**Quick Fix:**
+1. Check required fields are filled (Email, Voice Type, Writing Samples)
+2. Verify writing samples are at least 500 words
+3. Try a different browser or clear cache
+4. If using your own N8N: check workflow execution logs for errors
 
 ---
 
