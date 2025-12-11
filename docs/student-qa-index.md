@@ -6,6 +6,7 @@ Quick reference for answered student questions. Check here before asking!
 
 | Date | Document | Topics Covered |
 |------|----------|----------------|
+| **Dec 10, 2025** | **[Dec 10 Q&A](qa-dec10-comprehensive.md)** | **LATEST - 84 questions answered, all fixes, Claude Code prompts** |
 | Dec 8, 2025 | [Dec 8 Q&A](qa-dec8-student-questions.md) | Echo workflow, KB Manager, Gemini API 404, Windows setup, W2 credentials |
 | Dec 8, 2025 | [Claude Code Prompts](qa-dec8-claude-prompts.md) | Ready-to-copy prompts for common tasks |
 | Dec 5, 2025 | [Dec 5 Q&A](qa-dec5-student-questions.md) | Friday office hours questions |
@@ -24,14 +25,40 @@ Give this to Claude Code to search for answers:
 I have a question about MindValley AI Mastery.
 
 Search the docs folder for any Q&A files that might have my answer:
+- docs/qa-dec10-comprehensive.md (LATEST - check this first!)
 - docs/qa-dec8-student-questions.md
 - docs/qa-dec5-student-questions.md
-- docs/session-1-faq.md
 
 Look for answers related to: [describe your issue]
 ```
 
 ## What's in Each Document
+
+### Dec 10 Q&A - COMPREHENSIVE (84 Questions)
+
+**Start here!** This document consolidates all student questions with the latest fixes.
+
+**Fixed Issues (run git pull first!):**
+- Echo Processor incomplete (3→40 nodes)
+- Echo "Create Files for Email" bug
+- KB Manager / The Stacks missing
+- Stacks "Failed to fetch" error
+
+**Still In Progress:**
+- W2 Approval Handler import (Tyler working on fix)
+
+**Newly Answered:**
+- OpenRouter cost management
+- Gmail OAuth2 setup step-by-step
+- Building automation before launch timing
+- How to understand workflows you build
+- Rejection/learning loops for Sugar
+- Overwhelmed by info sources (single source of truth)
+- VS Code Airtable OAuth cache issues
+
+**Includes Claude Code prompts** for every issue - copy-paste and troubleshoot!
+
+---
 
 ### Dec 8 Q&A (18 Topics)
 
@@ -137,6 +164,6 @@ I'm new to this, so please explain each step.
 
 ---
 
-*Updated: December 8, 2025*
-*Total questions answered: 32*
-*Total Claude Code prompts: 50+*
+*Updated: December 11, 2025*
+*Total questions answered: 84+ (Dec 10 comprehensive covers all submissions)*
+*Total Claude Code prompts: 75+*

@@ -35,6 +35,11 @@ This gives you:
 | Windows git-bash PATH error | ANSWERED | [Setup Issues](#setup--installation-issues) |
 | OpenRouter costs too high | ANSWERED | [Cost Questions](#cost-questions) |
 | Gmail OAuth setup | ANSWERED | [Credential Setup](#credential-setup) |
+| Should I build before launch? | ANSWERED | [Additional Questions](#additional-questions-answered) |
+| How to understand what I built? | ANSWERED | [Additional Questions](#additional-questions-answered) |
+| Learning loop for rejections? | ANSWERED | [Additional Questions](#additional-questions-answered) |
+| Overwhelmed by info sources | ANSWERED | [Additional Questions](#additional-questions-answered) |
+| VS Code Airtable OAuth stuck | ANSWERED | [Additional Questions](#additional-questions-answered) |
 
 ---
 
@@ -477,6 +482,153 @@ for my problem?"
 
 ---
 
+## Additional Questions Answered
+
+### "Should I build automation before launch (6 months out)?"
+
+**Status:** ANSWERED
+
+**Short answer:** Yes, start now!
+
+**Why build early:**
+1. Learning curve takes time - master tools before launch stress
+2. Test workflows on personal emails/tasks first
+3. System refinement happens through iteration
+4. Having automation ready at launch = competitive advantage
+5. Your system can evolve as your business model clarifies
+
+---
+
+### "How do I actually understand what I just built?"
+
+**Status:** ANSWERED
+
+**Great meta-learning question!** Here's how to learn the system deeply:
+
+1. **Read the workflow in N8N** - Click each node, read what it does
+2. **Ask Claude Code to explain** - "Explain this workflow step-by-step and why each node exists"
+3. **Change one thing** - Modify a node, see what breaks, understand dependencies
+4. **Build from scratch** - Try creating a basic email workflow yourself
+5. **Teach someone** - Best way to solidify understanding
+
+```
+Ask Claude Code:
+"Walk me through the Echo Processor workflow node by node.
+For each node, explain what it does and why it's needed.
+I want to understand the architecture, not just copy it."
+```
+
+---
+
+### "Can I build a rejection/learning loop for Sugar?"
+
+**Status:** ANSWERED (Advanced Topic)
+
+**Great thinking!** This is "active learning" for AI systems.
+
+**Current State:** The W2 system doesn't automatically capture rejection patterns yet.
+
+**How to Add This (Post-Course):**
+1. Add a Google Sheet to log: `[timestamp, original draft, your edit, reason]`
+2. Update Slack approval workflow to write rejections to this sheet
+3. Weekly: Ask Claude to analyze patterns
+4. Monthly: Update Sugar's system prompt based on patterns
+5. Eventually: Fine-tune on your approved-vs-rejected examples
+
+This is exactly the optimization you do once the system is running!
+
+---
+
+### "I'm 9 hours in and mine doesn't look like yours"
+
+**Status:** ANSWERED
+
+**First:** Run `git pull` - many issues were fixed in recent updates.
+
+**Then check:**
+1. Which specific step are you on? (Setup, Echo, KB, W2?)
+2. What does yours look like vs expected?
+3. Share a screenshot if possible
+
+```
+Ask Claude Code:
+"I'm stuck on [specific step] for MindValley AI Mastery.
+My setup doesn't match the demo. Please:
+1. Read the homework guide and check my current state
+2. Tell me what should be there vs what I have
+3. Help me get back on track"
+```
+
+---
+
+### "Email trigger not working + Claude Code image size error"
+
+**Status:** ANSWERED
+
+**Issue 1 - Email Trigger:**
+- Check Gmail OAuth2 credential is connected in N8N
+- Verify Gmail node has correct account selected
+- Check N8N execution logs for the actual error
+- Ensure Gmail label exists that the filter is watching
+
+**Issue 2 - Claude Code Image Error (2000px limit):**
+- This happens when you paste large screenshots
+- **Fix:** Start a new conversation (can't recover in same chat)
+- **Prevention:** Resize screenshots before pasting
+- Or upload to Google Drive and share the link
+
+---
+
+### "Too many information sources - can we get ONE source of truth?"
+
+**Status:** ANSWERED
+
+**You're absolutely right** - we had documentation lag during rapid fixes.
+
+**Single Source of Truth (as of Dec 11):**
+1. Run `git pull` to get ALL fixes
+2. Follow `docs/homework-part2-quick-guide.md` ONLY
+3. Ignore older Google Docs/PDFs if they conflict with the repo
+4. Use this Q&A doc for troubleshooting
+
+```
+Ask Claude Code:
+"I'm lost on where I am in the homework. Please:
+1. Read docs/homework-part2-quick-guide.md
+2. Check which steps I've completed
+3. Tell me exactly what to do next"
+```
+
+---
+
+### "VS Code stuck on Airtable OAuth error (won't clear)"
+
+**Status:** ANSWERED
+
+This is a stubborn MCP cache issue. Nuclear option:
+
+**Step 1: Find the Hidden Cache**
+```bash
+# Mac
+~/Library/Application Support/Code/User/globalStorage/anthropic.claude-code/
+
+# Windows
+%APPDATA%\Code\User\globalStorage\anthropic.claude-code\
+```
+Delete everything in that folder.
+
+**Step 2: Reinstall Claude Code Extension**
+1. Uninstall Claude Code extension completely
+2. Close VS Code
+3. Clear VS Code cache (Mac): `rm -rf ~/Library/Caches/com.microsoft.VSCode/`
+4. Reopen VS Code
+5. Reinstall Claude Code extension
+6. Do NOT install the Airtable MCP that caused the issue
+
+**If STILL failing:** File an issue with Anthropic support.
+
+---
+
 ## Coming Soon (Still Being Fixed)
 
 These items are being worked on:
@@ -488,5 +640,6 @@ Check back or run `git pull` for updates!
 
 ---
 
-*Last updated: December 10, 2025*
+*Last updated: December 11, 2025*
+*Total questions answered: 84*
 *Questions? Submit via the Google Form or bring to office hours.*
